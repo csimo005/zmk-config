@@ -22,7 +22,7 @@
    &trans &kp Q   &kp W   &kp F &kp P &kp G &kp J &kp L &kp U &kp Y     &kp Z    &trans
    &trans &kp A   &kp R   &kp S &kp T &kp D &kp H &kp N &kp E &kp I     &kp O    &trans
    &trans &kp SQT &kp DOT &kp X &kp C &kp V &kp B &kp K &kp M &kp COMMA &kp SEMI &trans
-   &mo 1 &kp RET &kp SPACE &kp RSHFT &kp BSPC &kp RCTRL
+   &to 1 &kp RET &kp SPACE &kp RSHFT &kp BSPC &kp RCTRL
                         >;
                 };
                 sym_layer {
@@ -35,7 +35,7 @@
    &trans &kp EXCL  &kp AT       &kp HASH        &kp DLLR     &kp PRCNT    &kp BSLH &kp LT    &kp GT    &kp LBRC &kp RBRC &trans
    &trans &kp UNDER &kp KP_EQUAL &kp KP_ASTERISK &kp KP_MINUS &kp KP_PLUS  &kp PIPE &kp LPAR  &kp RPAR  &kp LBKT &kp RBKT &trans
    &trans &trans    &trans       &kp GRAVE       &kp TILDE    &trans       &trans   &kp CARET &kp AMPS  &trans   &trans   &trans
-   &mo 2 &kp RET &kp SPACE &kp RSHIFT &kp BSPC &kp RCTRL
+   &to 2 &kp RET &kp SPACE &kp RSHIFT &kp BSPC &kp RCTRL
                         >;
                 };
                 numpad_layer {
@@ -48,7 +48,7 @@
    &trans &trans &trans &trans &trans &trans &kp KP_DIVIDE   &kp N7 &kp N8 &kp N9 &kp KP_MINUS &trans
    &trans &trans &trans &trans &trans &trans &kp KP_MULTIPLY &kp N4 &kp N5 &kp N6 &kp KP_PLUS  &trans
    &trans &trans &trans &trans &trans &trans &kp KP_COMMA    &kp N1 &kp N2 &kp N3 &kp KP_DOT   &trans
-   &mo 3 &kp RET &kp SPACE &kp N0 &kp BSPC &kp RCTRL
+   &to 3 &kp RET &kp SPACE &kp N0 &kp BSPC &kp RCTRL
                         >;
                 };
                 lower_layer {
@@ -61,7 +61,7 @@
    &trans &trans &kp K_MUTE    &kp K_VOL_UP &kp K_VOL_DN &kp C_BRI_UP &trans  &trans   &kp  UP  &trans    &trans &trans
    &trans &trans &kp K_PREV    &kp K_PP     &kp K_NEXT   &kp C_BRI_DN &trans  &kp LEFT &kp DOWN &kp RIGHT &trans &trans
    &trans &trans &trans        &trans       &trans       &trans       &trans  &trans   &trans   &trans    &trans &trans
-   &mo 0 &kp RET &kp SPACE &kp RSHIFT &kp BSPC &kp RCTRL
+   &to 0 &kp RET &kp SPACE &kp RSHIFT &kp BSPC &kp RCTRL
                         >;
                 };
         };
