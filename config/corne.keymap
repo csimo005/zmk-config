@@ -23,6 +23,14 @@
                 tapping-term-ms = <200>;
                 bindings = <&to>, <&sl>;
             };
+            to_to: behavior_to_sl {
+                compatible = "zmk,behavior-hold-tap";
+                label = "to_to";
+                #binding-cells = <2>;
+                flavor = "hold-preferred";
+                tapping-term-ms = <200>;
+                bindings = <&to>, <&to>;
+            };
             nav: tap_dance_mod_tap {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_MOD_TAP";
@@ -58,7 +66,7 @@
    &trans &kp EXCL  &kp AT       &kp HASH        &kp DLLR     &kp PRCNT    &kp BSLH &kp LT    &kp GT    &kp LBRC &kp RBRC &trans
    &trans &kp UNDER &kp KP_EQUAL &kp KP_ASTERISK &kp KP_MINUS &kp KP_PLUS  &kp PIPE &kp LPAR  &kp RPAR  &kp LBKT &kp RBKT &trans
    &trans &trans    &trans       &kp GRAVE       &kp TILDE    &trans       &trans   &kp CARET &kp AMPS  &trans   &trans   &trans
-   <&mt <&to SYM> <&to DEF>> &kp RET &kp SPACE &kp RSHIFT &kp BSPC &kp RCTRL
+   &to_to SYM DEF &kp RET &kp SPACE &kp RSHIFT &kp BSPC &kp RCTRL
                         >;
                 };
                 numpad_layer {
@@ -71,7 +79,7 @@
    &trans &trans &trans &trans &trans &trans &kp KP_DIVIDE   &kp N7 &kp N8 &kp N9 &kp KP_MINUS &trans
    &trans &trans &trans &trans &trans &trans &kp KP_MULTIPLY &kp N4 &kp N5 &kp N6 &kp KP_PLUS  &trans
    &trans &trans &trans &trans &trans &trans &kp KP_COMMA    &kp N1 &kp N2 &kp N3 &kp KP_DOT   &trans
-   <&mt <&to NUM> <&to DEF>> &kp RET &kp SPACE &kp N0 &kp BSPC &kp RCTRL
+   &to_to NUM DEF &kp RET &kp SPACE &kp N0 &kp BSPC &kp RCTRL
                         >;
                 };
                 navigation_layer {
@@ -84,7 +92,7 @@
    &trans &trans &kp K_MUTE    &kp K_VOL_UP &kp K_VOL_DN &kp C_BRI_UP &trans  &trans   &kp  UP  &trans    &trans &trans
    &trans &trans &kp K_PREV    &kp K_PP     &kp K_NEXT   &kp C_BRI_DN &trans  &kp LEFT &kp DOWN &kp RIGHT &trans &trans
    &trans &trans &trans        &trans       &trans       &trans       &trans  &trans   &trans   &trans    &trans &trans
-   <&mt <&to NAV> <&to DEF>> 0 &kp RET &kp SPACE &kp RSHIFT &kp BSPC &kp RCTRL
+   &to_to NAV DEF &kp RET &kp SPACE &kp RSHIFT &kp BSPC &kp RCTRL
                         >;
                 };
         };
