@@ -9,6 +9,16 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+        behaviors {
+            nav: tap_dance_mod_tap {
+                compatible = "zmk,behavior-tap-dance";
+                label = "TAP_DANCE_MOD_TAP";
+                #binding-cells = <0>;
+                tapping-term-ms = <200>;
+                bindings = <&mt N5 N1>, <&mt N6 N2> <&mt N7 N3> <&mt N8 N4>;
+            };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -22,7 +32,7 @@
    &trans &kp Q   &kp W   &kp F &kp P &kp G &kp J &kp L &kp U &kp Y     &kp Z    &trans
    &trans &kp A   &kp R   &kp S &kp T &kp D &kp H &kp N &kp E &kp I     &kp O    &trans
    &trans &kp SQT &kp DOT &kp X &kp C &kp V &kp B &kp K &kp M &kp COMMA &kp SEMI &trans
-   &to 1 &kp RET &kp SPACE &kp RSHFT &kp BSPC &kp RCTRL
+   &nav &kp RET &kp SPACE &kp RSHFT &kp BSPC &kp RCTRL
                         >;
                 };
                 sym_layer {
