@@ -15,12 +15,20 @@
 
 / {
         behaviors {
+            to_sl: behavior_to_sl {
+                compatible = "zmk,behavior-hold-tap";
+                label = "to_sl";
+                #binding-cells = <2>;
+                flavor = "hold-preferred";
+                tapping-term-ms = <200>;
+                bindings = <&to>, <&sl>;
+            };
             nav: tap_dance_mod_tap {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_MOD_TAP";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
-                bindings = <&mt CAPSLOCK ESC>, <&mt <&to SYM> <&sl SYM> >, <&mt <&to NUM> <&sl NUM>>, <&mt <&to NAV> <&sl NAV>>;
+                bindings = <&mt CAPSLOCK ESC>, <&to_sl SYM SYM>, <&to_sl NUM NUM>, <&to_sl NAV NAV>;
             };
         };
 
