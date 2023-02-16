@@ -35,8 +35,15 @@
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_MOD_TAP";
                 #binding-cells = <0>;
-                tapping-term-ms = <200>;
+                tapping-term-ms = <300>;
                 bindings = <&mt CAPSLOCK ESC>, <&to_sl SYM SYM>, <&to_sl NUM NUM>, <&to_sl NAV NAV>;
+            };
+            pq: period_question {
+                compatible = "zmk,behavior-mod-morph";
+                label = "period_question";
+                #binding-cells = <0>;
+                bindings = <&kp DOT>, <&kp QMARK>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
             };
         };
 
@@ -50,9 +57,9 @@
 // | xxxx |  '  |  .  |  X  |  C  |  V  |   |  B   |  K   |  M   |  ,  |  ;  | xxxx |
 //                    | NAV | ENT | SPC |   | SHFT | BSPC | CTRL |
                         bindings = <
-   &trans &kp Q   &kp W   &kp F &kp P &kp G &kp J &kp L &kp U &kp Y     &kp Z    &trans
-   &trans &kp A   &kp R   &kp S &kp T &kp D &kp H &kp N &kp E &kp I     &kp O    &trans
-   &trans &kp SQT &kp DOT &kp X &kp C &kp V &kp B &kp K &kp M &kp COMMA &kp SEMI &trans
+   &none &kp Q   &kp W   &kp F &kp P &kp G &kp J &kp L &kp U &kp Y     &kp Z    &none
+   &none &kp A   &kp R   &kp S &kp T &kp D &kp H &kp N &kp E &kp I     &kp O    &none
+   &none &kp SQT &pq &kp X &kp C &kp V &kp B &kp K &kp M &kp COMMA &kp SEMI &none
    &nav &kp RET &kp SPACE &kp RSHFT &kp BSPC &kp RCTRL
                         >;
                 };
@@ -60,12 +67,12 @@
 // -----------------------------------------------------------------------------------------
 // | xxxx |  !  |  @  |  #  |  $  |  %  |   | "\" |  <  |  >  |  {  |  }  | xxxx |
 // | xxxx |  _  |  =  |  *  |  -  |  +  |   | "|" |  (  |  )  |  [  |  ]  | xxxx |
-// | xxxx |     |     |  `  |  ~  |     |   |     |  ^  |  &  |     |     | xxxx |
+// | xxxx |     |     |  `  |  ~  |     |   |  /  |  ^  |  &  |     |     | xxxx |
 //                    | NAV | ENT | SPC |   | SHFT | BSPC | CTRL |
                         bindings = <
-   &trans &kp EXCL  &kp AT       &kp HASH        &kp DLLR     &kp PRCNT    &kp BSLH &kp LT    &kp GT    &kp LBRC &kp RBRC &trans
-   &trans &kp UNDER &kp KP_EQUAL &kp KP_ASTERISK &kp KP_MINUS &kp KP_PLUS  &kp PIPE &kp LPAR  &kp RPAR  &kp LBKT &kp RBKT &trans
-   &trans &trans    &trans       &kp GRAVE       &kp TILDE    &trans       &trans   &kp CARET &kp AMPS  &trans   &trans   &trans
+   &none &kp EXCL  &kp AT       &kp HASH        &kp DLLR     &kp PRCNT    &kp BSLH &kp LT    &kp GT    &kp LBRC &kp RBRC &none
+   &none &kp UNDER &kp KP_EQUAL &kp KP_ASTERISK &kp KP_MINUS &kp KP_PLUS  &kp PIPE &kp LPAR  &kp RPAR  &kp LBKT &kp RBKT &none
+   &none &none    &none       &kp GRAVE       &kp TILDE    &none       &kp KP_DIVIDE   &kp CARET &kp AMPS  &none   &none   &none
    &to_to SYM DEF &kp RET &kp SPACE &kp RSHIFT &kp BSPC &kp RCTRL
                         >;
                 };
@@ -76,9 +83,9 @@
 // | xxxx |     |     |     |     |     |   |  ,  |  1  |  2  |  3  |  .  | xxxx |
 //                    | NAV | ENT | SPC |   |  0  | BSPC | CTRL |
                         bindings = <
-   &trans &trans &trans &trans &trans &trans &kp KP_DIVIDE   &kp N7 &kp N8 &kp N9 &kp KP_MINUS &trans
-   &trans &trans &trans &trans &trans &trans &kp KP_MULTIPLY &kp N4 &kp N5 &kp N6 &kp KP_PLUS  &trans
-   &trans &trans &trans &trans &trans &trans &kp KP_COMMA    &kp N1 &kp N2 &kp N3 &kp KP_DOT   &trans
+   &none &none &none &none &none &none &kp KP_DIVIDE   &kp N7 &kp N8 &kp N9 &kp KP_MINUS &none
+   &none &none &none &none &none &none &kp KP_MULTIPLY &kp N4 &kp N5 &kp N6 &kp KP_PLUS  &none
+   &none &none &none &none &none &none &kp KP_COMMA    &kp N1 &kp N2 &kp N3 &kp KP_DOT   &none
    &to_to NUM DEF &kp RET &kp SPACE &kp N0 &kp BSPC &kp RCTRL
                         >;
                 };
@@ -89,9 +96,9 @@
 // | xxxx |BTCLR| BT1 | BT2 | BT3 | BT4 |   |      |      |      |     |     | xxxx |
 //                    | NAV | ENT | SPC |   | SHFT | BSPC | CTRL |
                         bindings = <
-   &trans &trans &kp K_MUTE    &kp K_VOL_UP &kp K_VOL_DN &kp C_BRI_UP &trans  &trans   &kp  UP  &trans    &trans &trans
-   &trans &trans &kp K_PREV    &kp K_PP     &kp K_NEXT   &kp C_BRI_DN &trans  &kp LEFT &kp DOWN &kp RIGHT &trans &trans
-   &trans &trans &trans        &trans       &trans       &trans       &trans  &trans   &trans   &trans    &trans &trans
+   &none &none &kp K_MUTE    &kp K_VOL_DN &kp K_VOL_UP &kp C_BRI_UP &none  &none   &kp  UP  &none    &none &none
+   &none &none &kp K_PREV    &kp K_PP     &kp K_NEXT   &kp C_BRI_DN &none  &kp LEFT &kp DOWN &kp RIGHT &none &none
+   &none &none &none        &none       &none       &none       &none  &none   &none   &none    &none &none
    &to_to NAV DEF &kp RET &kp SPACE &kp RSHIFT &kp BSPC &kp RCTRL
                         >;
                 };
