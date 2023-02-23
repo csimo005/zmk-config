@@ -28,7 +28,7 @@
                 label = "to_to";
                 #binding-cells = <2>;
                 flavor = "hold-preferred";
-                tapping-term-ms = <200>;
+                tapping-term-ms = <300>;
                 bindings = <&to>, <&to>;
             };
             nav: tap_dance_mod_tap {
@@ -60,7 +60,7 @@
    &none &kp Q   &kp W   &kp F &kp P &kp G &kp J &kp L &kp U &kp Y     &kp Z    &none
    &none &kp A   &kp R   &kp S &kp T &kp D &kp H &kp N &kp E &kp I     &kp O    &none
    &none &kp SQT &pq &kp X &kp C &kp V &kp B &kp K &kp M &kp COMMA &kp SEMI &none
-   &nav &kp RET &kp SPACE &kp RSHFT &kp BSPC &kp RCTRL
+   &nav &kp RET &mt SPACE TAB &kp RSHFT &kp BSPC &kp RCTRL
                         >;
                 };
                 sym_layer {
@@ -73,7 +73,7 @@
    &none &kp EXCL  &kp AT       &kp HASH        &kp DLLR     &kp PRCNT    &kp BSLH &kp LT    &kp GT    &kp LBRC &kp RBRC &none
    &none &kp UNDER &kp KP_EQUAL &kp KP_ASTERISK &kp KP_MINUS &kp KP_PLUS  &kp PIPE &kp LPAR  &kp RPAR  &kp LBKT &kp RBKT &none
    &none &none    &none       &kp GRAVE       &kp TILDE    &none       &kp KP_DIVIDE   &kp CARET &kp AMPS  &none   &none   &none
-   &to_to SYM DEF &kp RET &kp SPACE &kp RSHIFT &kp BSPC &kp RCTRL
+   &to_to SYM DEF &kp RET &mt SPACE TAB &kp RSHIFT &kp BSPC &kp RCTRL
                         >;
                 };
                 numpad_layer {
@@ -86,7 +86,7 @@
    &none &none &none &none &none &none &kp KP_DIVIDE   &kp N7 &kp N8 &kp N9 &kp KP_MINUS &none
    &none &none &none &none &none &none &kp KP_MULTIPLY &kp N4 &kp N5 &kp N6 &kp KP_PLUS  &none
    &none &none &none &none &none &none &kp KP_COMMA    &kp N1 &kp N2 &kp N3 &kp KP_DOT   &none
-   &to_to NUM DEF &kp RET &kp SPACE &kp N0 &kp BSPC &kp RCTRL
+   &to_to NUM DEF &kp RET &mt SPACE TAB &kp N0 &kp BSPC &kp RCTRL
                         >;
                 };
                 navigation_layer {
@@ -99,7 +99,7 @@
    &none &none &kp K_MUTE    &kp K_VOL_DN &kp K_VOL_UP &kp C_BRI_UP &none  &none   &kp  UP  &none    &none &none
    &none &none &kp K_PREV    &kp K_PP     &kp K_NEXT   &kp C_BRI_DN &none  &kp LEFT &kp DOWN &kp RIGHT &none &none
    &none &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none  &none   &none   &none    &none &none
-   &to_to NAV DEF &kp RET &kp SPACE &kp RSHIFT &kp BSPC &kp RCTRL
+   &to_to NAV DEF &kp RET &mt SPACE TAB &kp RSHIFT &kp BSPC &kp RCTRL
                         >;
                 };
         };
