@@ -91,7 +91,7 @@
 // | xxxx |     |     |     |     |     |   |  ,  |  1  |  2  |  3  |  .  | xxxx |
 //                    | NAV | ENT | SPC |   |  0  | BSPC | CTRL |
                         bindings = <
-   &none &none &none &none &none &none &kp DIVIDE &kp N7 &kp N8 &kp N9 &kp MINUS &none
+   &none &none &none &none &none &none &kp SLASH &kp N7 &kp N8 &kp N9 &kp MINUS &none
    &none &none &none &none &none &none &kp STAR   &kp N4 &kp N5 &kp N6 &kp PLUS  &none
    &none &none &none &none &none &none &kp COMMA  &kp N1 &kp N2 &kp N3 &kp DOT   &none
    &to_to NUM DEF &kp RET &mt TAB SPACE &kp BPSC &kp N0 &kp RCTRL
